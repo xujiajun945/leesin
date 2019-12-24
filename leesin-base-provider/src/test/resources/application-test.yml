@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: leesin-base-provider
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+  cloud:
+    discovery:
+      enabled: true
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+feign:
+  httpclient:
+    enabled: true
+
+leesin:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+    username:
+    password:
+  task-executor:
+    core-pool-size: 5
+    max-pool-size: 10
+    queue-capacity: 25
+    prefix: Leesin-base-provider-AsyncTask-
