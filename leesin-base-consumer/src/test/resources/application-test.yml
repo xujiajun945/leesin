@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: leesin-base-provider
+    name: leesin-base-consumer-test
   http:
     encoding:
       charset: utf-8
@@ -24,11 +24,11 @@ feign:
 leesin:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url:
-    username:
-    password:
+    url: jdbc:mysql://123.56.107.35:3306/leesin?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: XJJ940404mysql
   task-executor:
     core-pool-size: 5
     max-pool-size: 10
     queue-capacity: 25
-    prefix: Leesin-base-provider-AsyncTask-
+    prefix: Leesin-base-consumer-AsyncTask-
