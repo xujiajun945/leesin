@@ -1,0 +1,34 @@
+# Compiled class file
+*.class
+*.classpath
+
+# Log file
+logs
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# IDE Files #
+*.iml
+.idea
+.idea/
+.project
+.settings
+target
+.DS_Store
+rebel.xml
+.vscode
+.factorypath
+node_modules/
+package-lock.json
+dist/
+*-own.yml
+
+# special: 木作项目使用nacos config, 禁止自己的配置提交
+*.yml
