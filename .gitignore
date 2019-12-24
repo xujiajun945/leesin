@@ -31,4 +31,4 @@ dist/
 *-own.yml
 
 # special: 木作项目使用nacos config, 禁止自己的配置提交
-#*.yml
+*.yml
