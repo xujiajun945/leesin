@@ -14,6 +14,12 @@
 	<artifactId>leesin-api</artifactId>
 
 	<dependencies>
+		<!-- web -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+
 		<!-- Fastjson -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -25,6 +31,12 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.dabanjia</groupId>
+			<artifactId>vayne-core</artifactId>
+		</dependency>
+
 	</dependencies>
 
 </project>

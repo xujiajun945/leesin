@@ -60,6 +60,7 @@
 		<lombok.version>1.18.10</lombok.version>
 
 		<leesin-api.version>1.0-SNAPSHOT</leesin-api.version>
+		<vayne-core.version>1.0-SNAPSHOT</vayne-core.version>
 	</properties>
 
 	<dependencyManagement>
@@ -147,6 +148,11 @@
 				<groupId>com.dabanjia</groupId>
 				<artifactId>leesin-api</artifactId>
 				<version>${leesin-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.dabanjia</groupId>
+				<artifactId>vayne-core</artifactId>
+				<version>${vayne-core.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
