@@ -1,14 +1,12 @@
 package com.dabanjia.leesin.base.configuration;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.dabanjia.vayne.core.entity.ResponseData;
 import com.dabanjia.vayne.core.exception.ResponseException;
 import feign.*;
 import feign.codec.Decoder;
 import feign.codec.ErrorDecoder;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.cloud.openfeign.support.SpringMvcContract;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="10 seconds">
+
+	<property name="LOG_ROOT" value="logs"/>
+	<property name="LOG_LEVEL" value="info"/>
+	<property name="LOG_LEVEL_INFO" value="info"/>
+	<property name="CONSOLE_LOG_PATTERN" value="%cyan(%d{yyyy-MM-dd HH:mm:ss}) %boldYellow(%-5p) [%thread] %blue(%c{1}) - %msg%n"/>
+
+	<!-- 开发环境显示更加细粒度的信息 -->
+	<springProfile name="dev">
+		<property name="LOG_LEVEL" value="debug"/>
+		<property name="LOG_LEVEL_INFO" value="info"/>
+	</springProfile>
+	<springProfile name="own">
+		<property name="LOG_LEVEL" value="debug"/>
+		<property name="LOG_LEVEL_INFO" value="info"/>
+	</springProfile>
+
+	<!--输出到控制台-->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<!-- [公共Appender] 默认 -->
+	<appender name="DEFAULT-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_ROOT}/leesin-gateway.log</file>
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_ROOT}/leesin-gateway/leesin-gateway.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<!-- [公共Appender] 汇总错误 -->
+	<appender name="ERROR-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_ROOT}/leesin-gateway-error.log</file>
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_ROOT}/leesin-gateway-error/leesin-gateway-error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>error</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
+	<!-- ===== [Application Logger] ===== -->
+	<logger name="org.springframework" level="error"/>
+	<logger name="com.alibaba.cloud" level="${LOG_LEVEL_INFO}"/>
+	<logger name="com.alibaba" level="error"/>
+	<logger name="org.apache" level="error"/>
+	<logger name="io.lettuce.core" level="error"/>
+
+	<!-- [Application Logger] MuZuo Platform Default -->
+	<logger name="com.dabanjia" additivity="false">
+		<level value="${LOG_LEVEL}"/>
+		<appender-ref ref="DEFAULT-APPENDER"/>
+		<appender-ref ref="ERROR-APPENDER"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<root>
+		<level value="${LOG_LEVEL}"/>
+		<appender-ref ref="DEFAULT-APPENDER"/>
+		<appender-ref ref="ERROR-APPENDER"/>
+		<appender-ref ref="STDOUT"/>
+	</root>
+
+</configuration>

@@ -1,6 +1,7 @@
 package com.dabanjia.leesin.base.feign;
 
 import com.dabanjia.leesin.api.vo.UserVO;
+import com.dabanjia.leesin.base.feign.fallback.DemoClientFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +13,7 @@ import java.util.List;
  * @author xujiajun
  * @since 2019/12/25
  */
-@FeignClient(name = "${list-of-server.leesin-base-provider}")
+@FeignClient(name = "${list-of-server.leesin-base-provider}", fallbackFactory = DemoClientFallbackFactory.class)
 public interface DemoClient {
 
 	/**

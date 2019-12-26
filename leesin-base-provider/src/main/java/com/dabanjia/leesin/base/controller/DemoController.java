@@ -1,5 +1,6 @@
 package com.dabanjia.leesin.base.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.dabanjia.leesin.api.vo.UserVO;
 import com.dabanjia.leesin.base.service.DemoService;
 import com.dabanjia.vayne.core.entity.ResponseData;
@@ -27,11 +28,13 @@ public class DemoController {
 	 */
 	@GetMapping(value = "/user/{id}")
 	public ResponseData test(@PathVariable Long id) {
+		int i = 1 / 0;
 		UserVO userVO = demoService.getById(id);
 		return new ResponseData(userVO);
 	}
 
 	@GetMapping(value = "/user")
+	@SentinelResource(value = "sentinel-test")
 	public ResponseData test2(@RequestBody List<Long> ids) {
 		List<UserVO> userVOList = demoService.listByIds(ids);
 		return new ResponseData(userVOList);
