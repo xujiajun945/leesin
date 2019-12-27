@@ -26,13 +26,13 @@
 
 	<!-- [公共Appender] 默认 -->
 	<appender name="DEFAULT-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${LOG_ROOT}/leesin-gateway/leesin-gateway.log</file>
+		<file>${LOG_ROOT}/leesin-bussiness/leesin-bussiness.log</file>
 		<encoder>
 			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_ROOT}/leesin-gateway/backup/info/leesin-gateway.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>${LOG_ROOT}/leesin-bussiness/backup/info/leesin-bussiness.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<maxFileSize>100MB</maxFileSize>
 			</timeBasedFileNamingAndTriggeringPolicy>
@@ -42,13 +42,13 @@
 
 	<!-- [公共Appender] 汇总错误 -->
 	<appender name="ERROR-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${LOG_ROOT}/leesin-gateway/leesin-gateway-error.log</file>
+		<file>${LOG_ROOT}/leesin-bussiness/leesin-bussiness-error.log</file>
 		<encoder>
 			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_ROOT}/leesin-gateway/backup/error/leesin-gateway-error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>${LOG_ROOT}/leesin-bussiness/backup/error/leesin-bussiness-error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<maxFileSize>100MB</maxFileSize>
 			</timeBasedFileNamingAndTriggeringPolicy>
@@ -61,6 +61,33 @@
 		</filter>
 	</appender>
 
+	<!-- [公共Appender] 数据访问层 -->
+	<appender name="DAL-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_ROOT}/leesin-bussiness/leesin-bussiness-dal.log</file>
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_ROOT}/leesin-bussiness/backup/dal/leesin-bussiness-dal.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<!-- ===================================================================== -->
+	<!-- Loggers -->
+	<!-- ===================================================================== -->
+
+	<!-- [Mybatis Logger] DAL - SQL -->
+	<logger name="org.mybatis" level="error" additivity="false">
+		<appender-ref ref="DAL-APPENDER"/>
+		<appender-ref ref="ERROR-APPENDER"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
 	<!-- ===== [Application Logger] ===== -->
 	<logger name="org.springframework" level="error"/>
 	<logger name="com.alibaba.cloud" level="${LOG_LEVEL_INFO}"/>
@@ -68,7 +95,7 @@
 	<logger name="org.apache" level="error"/>
 	<logger name="io.lettuce.core" level="error"/>
 
-	<!-- [Application Logger] -->
+	<!-- [Application Logger] MuZuo Platform Default -->
 	<logger name="com.dabanjia" additivity="false">
 		<level value="${LOG_LEVEL}"/>
 		<appender-ref ref="DEFAULT-APPENDER"/>

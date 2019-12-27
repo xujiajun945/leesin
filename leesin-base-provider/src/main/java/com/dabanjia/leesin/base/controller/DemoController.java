@@ -28,7 +28,6 @@ public class DemoController {
 	 */
 	@GetMapping(value = "/user/{id}")
 	public ResponseData test(@PathVariable Long id) {
-		int i = 1 / 0;
 		UserVO userVO = demoService.getById(id);
 		return new ResponseData(userVO);
 	}

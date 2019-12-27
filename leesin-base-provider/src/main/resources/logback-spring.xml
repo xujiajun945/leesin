@@ -26,13 +26,13 @@
 
 	<!-- [公共Appender] 默认 -->
 	<appender name="DEFAULT-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${LOG_ROOT}/leesin-base-provider.log</file>
+		<file>${LOG_ROOT}/leesin-base-provider/leesin-base-provider.log</file>
 		<encoder>
 			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_ROOT}/leesin-base-provider-default/leesin-base-provider.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>${LOG_ROOT}/leesin-base-provider/backup/info/leesin-base-provider.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<maxFileSize>100MB</maxFileSize>
 			</timeBasedFileNamingAndTriggeringPolicy>
@@ -42,13 +42,13 @@
 
 	<!-- [公共Appender] 汇总错误 -->
 	<appender name="ERROR-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${LOG_ROOT}/leesin-base-provider-error.log</file>
+		<file>${LOG_ROOT}/leesin-base-provider/leesin-base-provider-error.log</file>
 		<encoder>
 			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_ROOT}/leesin-base-provider-error/leesin-base-provider-error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>${LOG_ROOT}/leesin-base-provider/backup/error/leesin-base-provider-error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<maxFileSize>100MB</maxFileSize>
 			</timeBasedFileNamingAndTriggeringPolicy>
@@ -63,13 +63,13 @@
 
 	<!-- [公共Appender] 数据访问层 -->
 	<appender name="DAL-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${LOG_ROOT}/leesin-base-provider-dal.log</file>
+		<file>${LOG_ROOT}/leesin-base-provider/leesin-base-provider-dal.log</file>
 		<encoder>
 			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_ROOT}/leesin-base-provider-dal/leesin-base-provider-dal.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>${LOG_ROOT}/leesin-base-provider/backup/dal/leesin-base-provider-dal.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<maxFileSize>100MB</maxFileSize>
 			</timeBasedFileNamingAndTriggeringPolicy>
@@ -95,7 +95,7 @@
 	<logger name="org.apache" level="error"/>
 	<logger name="io.lettuce.core" level="error"/>
 
-	<!-- [Application Logger] MuZuo Platform Default -->
+	<!-- [Application Logger] -->
 	<logger name="com.dabanjia" additivity="false">
 		<level value="${LOG_LEVEL}"/>
 		<appender-ref ref="DEFAULT-APPENDER"/>

@@ -17,6 +17,7 @@
 		<module>leesin-base-consumer</module>
 		<module>leesin-sdk</module>
 		<module>leesin-gateway</module>
+		<module>leesin-bussiness</module>
 	</modules>
 
 	<profiles>
