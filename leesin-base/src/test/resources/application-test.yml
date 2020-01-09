@@ -1,0 +1,40 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: leesin-base-test
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+  cloud:
+    discovery:
+      enabled: true
+    nacos:
+      discovery:
+        server-addr: 123.56.107.35:8848
+    sentinel:
+      transport:
+        port: 8791
+        dashboard: 123.56.107.35:8080
+
+feign:
+  httpclient:
+    enabled: true
+  sentinel:
+    enabled: true
+
+leesin:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://123.56.107.35:3306/leesin?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: XJJ940404mysql
+  task-executor:
+    core-pool-size: 5
+    max-pool-size: 10
+    queue-capacity: 25
+    prefix: Leesin-base-AsyncTask-

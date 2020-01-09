@@ -1,3 +1,4 @@
+-- 创建用户表
 CREATE TABLE uac_user (
     id BIGINT(20) NOT NULL auto_increment,
     phone CHAR(11) NOT NULL DEFAULT '' COMMENT '电话号码',

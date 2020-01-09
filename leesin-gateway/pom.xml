@@ -25,11 +25,11 @@
 			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
+			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
+			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
 		</dependency>
 		<dependency>
@@ -53,7 +53,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.funtl.hello.spring.cloud.gateway.GatewayApplication</mainClass>
+					<mainClass>com.dabanjia.leesin.gateway.GatewayApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

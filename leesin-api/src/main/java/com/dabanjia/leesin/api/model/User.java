@@ -34,6 +34,16 @@ public class User implements Serializable {
 	private String name;
 
 	/**
+	 * 密码
+	 */
+	private String password;
+
+	/**
+	 * 盐值
+	 */
+	private String salt;
+
+	/**
 	 * 创建时间
 	 */
 	private Date createTime;

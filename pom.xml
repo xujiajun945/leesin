@@ -13,11 +13,12 @@
 
 	<modules>
 		<module>leesin-api</module>
-		<module>leesin-base-provider</module>
+		<module>leesin-base</module>
 		<module>leesin-base-consumer</module>
 		<module>leesin-sdk</module>
 		<module>leesin-gateway</module>
 		<module>leesin-bussiness</module>
+		<module>leesin-model</module>
 	</modules>
 
 	<profiles>
@@ -62,6 +63,7 @@
 		<lombok.version>1.18.10</lombok.version>
 
 		<leesin-api.version>1.0-SNAPSHOT</leesin-api.version>
+		<leesin-model.version>1.0-SNAPSHOT</leesin-model.version>
 		<vayne-core.version>1.0-SNAPSHOT</vayne-core.version>
 	</properties>
 
@@ -151,6 +153,12 @@
 				<artifactId>leesin-api</artifactId>
 				<version>${leesin-api.version}</version>
 			</dependency>
+			<!-- model -->
+			<dependency>
+				<groupId>com.dabanjia</groupId>
+				<artifactId>leesin-model</artifactId>
+				<version>${leesin-model.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.dabanjia</groupId>
 				<artifactId>vayne-core</artifactId>
@@ -179,6 +187,14 @@
 			</resource>
 		</resources>
 		<!-- compile -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
