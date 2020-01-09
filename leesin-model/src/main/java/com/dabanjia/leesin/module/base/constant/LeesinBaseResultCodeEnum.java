@@ -1,4 +1,4 @@
-package com.dabanjia.leesin.base.entity.constant;
+package com.dabanjia.leesin.module.base.constant;
 
 import lombok.Getter;
 

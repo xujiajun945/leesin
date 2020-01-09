@@ -1,8 +1,9 @@
-package com.dabanjia.leesin.util;
+package com.dabanjia.leesin.module.common.util;
 
 import com.dabanjia.leesin.api.dto.UserDTO;
 import com.dabanjia.vayne.core.constant.ResponseCodeEnum;
 import com.dabanjia.vayne.core.exception.ResponseException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -14,9 +15,10 @@ import java.util.Optional;
  * @author xujiajun
  * @since 2020/1/8
  */
+@Slf4j
 public class LoginUtils {
 
-	public void setUser(UserDTO userDTO) {
+	protected void setUser(UserDTO userDTO) {
 		HttpServletRequest httpServletRequest = this.getHttpServletRequest();
 		HttpSession session = httpServletRequest.getSession();
 		session.setAttribute(session.getId(), userDTO);
@@ -28,7 +30,7 @@ public class LoginUtils {
 		return (UserDTO) session.getAttribute(session.getId());
 	}
 
-	public void removeUser() {
+	protected void removeUser() {
 		HttpServletRequest httpServletRequest = this.getHttpServletRequest();
 		HttpSession session = httpServletRequest.getSession();
 		session.removeAttribute(session.getId());
@@ -41,6 +43,7 @@ public class LoginUtils {
 	private HttpServletRequest getHttpServletRequest() {
 		ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
 		if (servletRequestAttributes == null) {
+			log.error("cannot get HttpServletRequest!");
 			throw new ResponseException(ResponseCodeEnum.BAD_REQUEST);
 		}
 		return servletRequestAttributes.getRequest();

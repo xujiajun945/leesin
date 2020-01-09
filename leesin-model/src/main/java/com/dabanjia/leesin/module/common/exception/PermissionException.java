@@ -1,6 +1,6 @@
-package com.dabanjia.leesin.base.entity.exception;
+package com.dabanjia.leesin.module.common.exception;
 
-import com.dabanjia.leesin.base.entity.constant.LeesinBaseResultCodeEnum;
+import com.dabanjia.leesin.module.base.constant.LeesinBaseResultCodeEnum;
 import com.dabanjia.vayne.core.constant.ResponseCodeEnum;
 import lombok.Getter;
 import lombok.Setter;

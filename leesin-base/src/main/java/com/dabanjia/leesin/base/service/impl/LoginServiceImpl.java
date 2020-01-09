@@ -4,8 +4,8 @@ import com.dabanjia.leesin.api.dto.LoginDTO;
 import com.dabanjia.leesin.api.dto.UserDTO;
 import com.dabanjia.leesin.api.model.User;
 import com.dabanjia.leesin.base.dao.UserMapper;
-import com.dabanjia.leesin.base.entity.constant.LeesinBaseResultCodeEnum;
-import com.dabanjia.leesin.base.entity.exception.PermissionException;
+import com.dabanjia.leesin.module.base.constant.LeesinBaseResultCodeEnum;
+import com.dabanjia.leesin.module.common.exception.PermissionException;
 import com.dabanjia.leesin.base.service.LoginService;
 import com.dabanjia.vayne.core.constant.ResponseCodeEnum;
 import com.dabanjia.vayne.core.exception.ResponseException;
@@ -40,8 +40,8 @@ public class LoginServiceImpl implements LoginService {
 		}
 		// 验证用户密码是否正确
 		String password = user.getPassword();
-		String md5Hex = DigestUtils.md5Hex(loginDTO.getPassword() + user.getSalt());
-		if (!md5Hex.equals(password)) {
+		String loginPassword = DigestUtils.md5Hex(loginDTO.getPassword() + user.getSalt());
+		if (!loginPassword.equals(password)) {
 			throw new PermissionException(LeesinBaseResultCodeEnum.PASSWORD_ERROR);
 		}
 		UserDTO userDTO = new UserDTO();

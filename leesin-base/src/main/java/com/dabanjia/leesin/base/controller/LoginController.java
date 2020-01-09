@@ -3,10 +3,13 @@ package com.dabanjia.leesin.base.controller;
 import com.dabanjia.leesin.api.dto.LoginDTO;
 import com.dabanjia.leesin.api.dto.UserDTO;
 import com.dabanjia.leesin.base.service.LoginService;
-import com.dabanjia.leesin.util.LoginUtils;
+import com.dabanjia.leesin.module.common.util.LoginUtils;
 import com.dabanjia.vayne.core.entity.ResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 /**
  * @author xujiajun
@@ -14,13 +17,10 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(value = "/login")
-public class LoginController {
+public class LoginController extends LoginUtils {
 
 	@Autowired
 	private LoginService loginService;
-
-	@Autowired
-	private LoginUtils loginUtils;
 
 	/**
 	 * 登录
@@ -31,7 +31,7 @@ public class LoginController {
 	@PostMapping
 	public ResponseData login(@RequestBody LoginDTO loginDTO) {
 		UserDTO userDTO = loginService.login(loginDTO);
-		loginUtils.setUser(userDTO);
+		this.setUser(userDTO);
 		return new ResponseData();
 	}
 
@@ -42,7 +42,7 @@ public class LoginController {
 	 */
 	@GetMapping(value = "/user_info")
 	public ResponseData getUserInfo() {
-		UserDTO user = loginUtils.getUser();
+		UserDTO user = this.getUser();
 		return new ResponseData(user);
 	}
 
@@ -53,7 +53,7 @@ public class LoginController {
 	 */
 	@DeleteMapping
 	public ResponseData logout() {
-		loginUtils.removeUser();
+		this.removeUser();
 		return new ResponseData();
 	}
 }
