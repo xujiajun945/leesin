@@ -6,10 +6,7 @@ import com.dabanjia.leesin.base.service.LoginService;
 import com.dabanjia.leesin.module.common.util.LoginUtils;
 import com.dabanjia.vayne.core.entity.ResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 
 /**
  * @author xujiajun

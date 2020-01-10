@@ -1,4 +1,4 @@
--- 创建用户表
+-- 创建用户表  2019/12/24
 CREATE TABLE uac_user (
     id BIGINT(20) NOT NULL auto_increment,
     phone CHAR(11) NOT NULL DEFAULT '' COMMENT '电话号码',
@@ -8,3 +8,7 @@ CREATE TABLE uac_user (
     is_deleted TINYINT(1) NOT NULL DEFAULT 0 COMMENT '是否删除',
     PRIMARY KEY (id)
 ) ENGINE = INNODB DEFAULT CHARSET=utf8 COMMENT '用户表';
+
+-- 用户表增加密码, 盐值  2020/1/8
+ALTER TABLE uac_user ADD COLUMN `password` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '密码' AFTER `name`;
+ALTER TABLE uac_user ADD COLUMN `salt` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '盐值' AFTER `password`;
