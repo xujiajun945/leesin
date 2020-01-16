@@ -1,6 +1,6 @@
 package com.dabanjia.leesin.base.service;
 
-import com.dabanjia.leesin.api.vo.UserVO;
+import com.dabanjia.leesin.api.module.common.vo.UserVO;
 
 import java.util.List;
 

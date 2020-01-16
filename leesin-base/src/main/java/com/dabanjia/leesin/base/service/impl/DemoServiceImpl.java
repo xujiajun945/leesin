@@ -1,7 +1,7 @@
 package com.dabanjia.leesin.base.service.impl;
 
-import com.dabanjia.leesin.api.model.User;
-import com.dabanjia.leesin.api.vo.UserVO;
+import com.dabanjia.leesin.api.module.common.model.User;
+import com.dabanjia.leesin.api.module.common.vo.UserVO;
 import com.dabanjia.leesin.base.dao.UserMapper;
 import com.dabanjia.leesin.base.service.DemoService;
 import org.springframework.beans.BeanUtils;

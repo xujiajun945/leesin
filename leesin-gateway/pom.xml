@@ -40,10 +40,16 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-gateway</artifactId>
 		</dependency>
-
+		<!-- Redis -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
+		<!-- model -->
+		<dependency>
+			<groupId>com.dabanjia</groupId>
+			<artifactId>leesin-model</artifactId>
 		</dependency>
 	</dependencies>
 

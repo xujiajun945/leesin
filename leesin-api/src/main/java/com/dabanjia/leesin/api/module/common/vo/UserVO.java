@@ -1,4 +1,4 @@
-package com.dabanjia.leesin.api.vo;
+package com.dabanjia.leesin.api.module.common.vo;
 
 import lombok.Getter;
 import lombok.Setter;

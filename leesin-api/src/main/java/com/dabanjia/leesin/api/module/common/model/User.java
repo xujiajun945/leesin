@@ -1,4 +1,4 @@
-package com.dabanjia.leesin.api.model;
+package com.dabanjia.leesin.api.module.common.model;
 
 import lombok.Getter;
 import lombok.Setter;

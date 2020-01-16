@@ -1,10 +1,10 @@
 package com.dabanjia.leesin.base.controller;
 
-import com.dabanjia.leesin.api.dto.LoginDTO;
-import com.dabanjia.leesin.api.dto.UserDTO;
+import com.dabanjia.leesin.api.module.common.dto.LoginDTO;
+import com.dabanjia.leesin.api.module.common.dto.UserDTO;
 import com.dabanjia.leesin.base.service.LoginService;
 import com.dabanjia.leesin.module.common.util.LoginUtils;
-import com.dabanjia.vayne.core.entity.ResponseData;
+import com.dabanjia.vayne.core.model.ResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

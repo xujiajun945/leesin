@@ -1,6 +1,6 @@
 package com.dabanjia.leesin.base.dao;
 
-import com.dabanjia.leesin.api.model.User;
+import com.dabanjia.leesin.api.module.common.model.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

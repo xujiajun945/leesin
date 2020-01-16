@@ -1,4 +1,4 @@
-package com.dabanjia.leesin.api.dto;
+package com.dabanjia.leesin.api.module.common.dto;
 
 import lombok.Getter;
 import lombok.Setter;

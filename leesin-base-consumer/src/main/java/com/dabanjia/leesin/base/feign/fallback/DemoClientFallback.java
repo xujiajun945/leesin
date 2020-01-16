@@ -1,6 +1,6 @@
 package com.dabanjia.leesin.base.feign.fallback;
 
-import com.dabanjia.leesin.api.vo.UserVO;
+import com.dabanjia.leesin.api.module.common.vo.UserVO;
 import com.dabanjia.leesin.base.feign.DemoClient;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
 package com.dabanjia.leesin.base.feign.fallback;
 
-import com.dabanjia.leesin.api.vo.UserVO;
+import com.dabanjia.leesin.api.module.common.vo.UserVO;
 import com.dabanjia.leesin.base.feign.DemoClient;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;

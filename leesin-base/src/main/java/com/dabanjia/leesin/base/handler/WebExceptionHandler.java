@@ -1,7 +1,7 @@
 package com.dabanjia.leesin.base.handler;
 
 import com.dabanjia.leesin.module.common.exception.PermissionException;
-import com.dabanjia.vayne.core.entity.ResponseData;
+import com.dabanjia.vayne.core.model.ResponseData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,6 +1,6 @@
 package com.dabanjia.leesin.base.feign;
 
-import com.dabanjia.leesin.api.vo.UserVO;
+import com.dabanjia.leesin.api.module.common.vo.UserVO;
 import com.dabanjia.leesin.base.feign.fallback.DemoClientFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

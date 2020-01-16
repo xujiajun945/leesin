@@ -1,13 +1,14 @@
 package com.dabanjia.leesin.base.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.dabanjia.leesin.api.vo.UserVO;
+import com.dabanjia.leesin.api.module.common.vo.UserVO;
 import com.dabanjia.leesin.base.service.DemoService;
 import com.dabanjia.leesin.module.common.util.LoginUtils;
-import com.dabanjia.vayne.core.entity.ResponseData;
+import com.dabanjia.vayne.core.model.ResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -23,6 +24,9 @@ public class DemoController {
 
 	@Autowired
 	private LoginUtils loginUtils;
+
+	@Autowired
+	private HttpSession httpSession;
 
 	private int num = 0;
 
@@ -54,5 +58,17 @@ public class DemoController {
 	public ResponseData testLoginUtils() {
 		Long userId = loginUtils.getUserId();
 		return new ResponseData(userId);
+	}
+
+	@PostMapping(value = "/http_session")
+	public ResponseData setHttpSession(String test) {
+		httpSession.setAttribute("test", test);
+		return new ResponseData();
+	}
+
+	@GetMapping(value = "/http_session")
+	public ResponseData testHttpSession() {
+		String test = (String) httpSession.getAttribute("test");
+		return new ResponseData(test);
 	}
 }

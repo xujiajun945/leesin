@@ -1,7 +1,7 @@
 package com.dabanjia.leesin.base.service;
 
-import com.dabanjia.leesin.api.dto.LoginDTO;
-import com.dabanjia.leesin.api.dto.UserDTO;
+import com.dabanjia.leesin.api.module.common.dto.LoginDTO;
+import com.dabanjia.leesin.api.module.common.dto.UserDTO;
 
 /**
  * @author xujiajun

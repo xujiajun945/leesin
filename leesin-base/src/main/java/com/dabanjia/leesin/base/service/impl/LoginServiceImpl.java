@@ -1,8 +1,8 @@
 package com.dabanjia.leesin.base.service.impl;
 
-import com.dabanjia.leesin.api.dto.LoginDTO;
-import com.dabanjia.leesin.api.dto.UserDTO;
-import com.dabanjia.leesin.api.model.User;
+import com.dabanjia.leesin.api.module.common.dto.LoginDTO;
+import com.dabanjia.leesin.api.module.common.dto.UserDTO;
+import com.dabanjia.leesin.api.module.common.model.User;
 import com.dabanjia.leesin.base.dao.UserMapper;
 import com.dabanjia.leesin.module.base.constant.LeesinBaseResultCodeEnum;
 import com.dabanjia.leesin.module.common.exception.PermissionException;

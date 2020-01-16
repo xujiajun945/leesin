@@ -1,4 +1,4 @@
-package com.dabanjia.leesin.api.dto;
+package com.dabanjia.leesin.api.module.common.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,9 +17,18 @@ public class UserDTO implements Serializable {
 
 	private static final long serialVersionUID = -174334341752145737L;
 
+	/**
+	 * id
+	 */
 	private Long id;
 
+	/**
+	 * 手机号
+	 */
 	private String phone;
 
+	/**
+	 * 姓名
+	 */
 	private String name;
 }

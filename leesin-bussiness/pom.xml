@@ -56,6 +56,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 		</dependency>
+		<!-- Redis -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
 		<!-- test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -84,10 +89,10 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 
-		<!-- api -->
+		<!-- model -->
 		<dependency>
 			<groupId>com.dabanjia</groupId>
-			<artifactId>leesin-api</artifactId>
+			<artifactId>leesin-model</artifactId>
 		</dependency>
 	</dependencies>
 

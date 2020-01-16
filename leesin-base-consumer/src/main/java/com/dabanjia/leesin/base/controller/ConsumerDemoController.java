@@ -1,6 +1,6 @@
 package com.dabanjia.leesin.base.controller;
 
-import com.dabanjia.leesin.api.vo.UserVO;
+import com.dabanjia.leesin.api.module.common.vo.UserVO;
 import com.dabanjia.leesin.base.feign.DemoClient;
 import com.dabanjia.vayne.core.entity.ResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
