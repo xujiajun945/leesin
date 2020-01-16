@@ -82,7 +82,7 @@
 	<!-- ===================================================================== -->
 
 	<!-- [Mybatis Logger] DAL - SQL -->
-	<logger name="org.mybatis" level="error" additivity="false">
+	<logger name="com.dabanjia.leesin.base.dao" level="error" additivity="false">
 		<appender-ref ref="DAL-APPENDER"/>
 		<appender-ref ref="ERROR-APPENDER"/>
 		<appender-ref ref="STDOUT"/>

@@ -56,3 +56,14 @@ feign:
 logging:
   level:
     org.springframework.cloud.gateway: debug
+
+gateway:
+  redis:
+    host: 123.56.107.35
+    port: 6379
+    password: xjjRedisPass
+
+sso:
+  cookie-name: LEESIN-DEV
+  expire-time: 3600
+  domain: localhost

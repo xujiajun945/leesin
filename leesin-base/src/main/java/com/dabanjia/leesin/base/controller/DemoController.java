@@ -71,4 +71,10 @@ public class DemoController {
 		String test = (String) httpSession.getAttribute("test");
 		return new ResponseData(test);
 	}
+
+	@GetMapping(value = "/log")
+	public ResponseData testLogback() {
+		UserVO userVO = demoService.getById(loginUtils.getUserId());
+		return new ResponseData(userVO);
+	}
 }
