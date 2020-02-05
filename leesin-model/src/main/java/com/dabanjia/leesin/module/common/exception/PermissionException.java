@@ -1,7 +1,7 @@
 package com.dabanjia.leesin.module.common.exception;
 
 import com.dabanjia.leesin.module.base.constant.LeesinBaseResultCodeEnum;
-import com.dabanjia.vayne.core.constant.ResponseCodeEnum;
+import com.dabanjia.vayne.core.constant.ResultCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,7 +28,7 @@ public class PermissionException extends RuntimeException {
 		this.code = code;
 	}
 
-	public PermissionException(ResponseCodeEnum codeEnum) {
+	public PermissionException(ResultCode codeEnum) {
 		super(codeEnum.getMessage());
 		this.code = codeEnum.getCode();
 	}

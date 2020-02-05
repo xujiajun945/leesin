@@ -4,10 +4,10 @@ import com.dabanjia.leesin.api.module.common.dto.LoginDTO;
 import com.dabanjia.leesin.api.module.common.dto.UserDTO;
 import com.dabanjia.leesin.api.module.common.model.User;
 import com.dabanjia.leesin.base.dao.UserMapper;
+import com.dabanjia.leesin.base.service.LoginService;
 import com.dabanjia.leesin.module.base.constant.LeesinBaseResultCodeEnum;
 import com.dabanjia.leesin.module.common.exception.PermissionException;
-import com.dabanjia.leesin.base.service.LoginService;
-import com.dabanjia.vayne.core.constant.ResponseCodeEnum;
+import com.dabanjia.vayne.core.constant.ResultCode;
 import com.dabanjia.vayne.core.exception.ResponseException;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.BeanUtils;
@@ -28,7 +28,7 @@ public class LoginServiceImpl implements LoginService {
 	public UserDTO login(LoginDTO loginDTO) {
 		String phone = loginDTO.getPhone();
 		if (phone == null || phone.isEmpty()) {
-			throw new ResponseException(ResponseCodeEnum.BAD_REQUEST);
+			throw new ResponseException(ResultCode.BAD_REQUEST);
 		}
 		// 验证当前手机号是否存在
 		User user = userMapper.getByPhone(phone);
