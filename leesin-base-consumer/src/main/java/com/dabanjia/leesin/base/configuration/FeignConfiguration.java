@@ -1,8 +1,8 @@
 package com.dabanjia.leesin.base.configuration;
 
 import com.alibaba.fastjson.JSON;
-import com.dabanjia.vayne.core.entity.ResponseData;
 import com.dabanjia.vayne.core.exception.ResponseException;
+import com.dabanjia.vayne.core.model.ResponseData;
 import feign.*;
 import feign.codec.Decoder;
 import feign.codec.ErrorDecoder;

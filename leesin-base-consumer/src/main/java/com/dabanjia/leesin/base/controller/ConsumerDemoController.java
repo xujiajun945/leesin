@@ -2,7 +2,7 @@ package com.dabanjia.leesin.base.controller;
 
 import com.dabanjia.leesin.api.module.common.vo.UserVO;
 import com.dabanjia.leesin.base.feign.DemoClient;
-import com.dabanjia.vayne.core.entity.ResponseData;
+import com.dabanjia.vayne.core.model.ResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
